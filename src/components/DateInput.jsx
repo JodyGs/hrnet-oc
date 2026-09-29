@@ -1,16 +1,23 @@
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import { dateToIso, isoToDate } from '../utils/date'
+
 /**
- * Champ date natif. Placeholder du plugin legacy jquery.datetimepicker :
- * remplacer l'implémentation par un date picker React en conservant cette API de props.
- * `value` et `onChange` utilisent des chaînes ISO (YYYY-MM-DD).
+ * Sélecteur de date basé sur react-datepicker (remplace le plugin legacy jquery.datetimepicker).
+ * `value` et `onChange` utilisent des chaînes ISO (YYYY-MM-DD) ; l'affichage est en MM/DD/YYYY.
  */
 export function DateInput({ id, value, onChange, required = false }) {
   return (
-    <input
+    <DatePicker
       id={id}
       name={id}
-      type="date"
-      value={value}
-      onChange={(event) => onChange(event.target.value)}
+      selected={isoToDate(value)}
+      onChange={(date) => onChange(dateToIso(date))}
+      dateFormat="MM/dd/yyyy"
+      showMonthDropdown
+      showYearDropdown
+      dropdownMode="select"
+      autoComplete="off"
       required={required}
     />
   )

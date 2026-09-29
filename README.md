@@ -34,14 +34,15 @@ src/
 
 ## jQuery plugins
 
-The four legacy jQuery plugins have been removed. Each one is replaced by a native placeholder
-component with a stable props API, ready to receive a React implementation:
+The four legacy jQuery plugins have been removed and replaced by React components:
 
-| Legacy plugin           | Placeholder                               |
-| ----------------------- | ----------------------------------------- |
-| jquery-modal            | `src/components/ConfirmationMessage.jsx`  |
-| jquery.datetimepicker   | `src/components/DateInput.jsx`            |
-| jQuery UI selectmenu    | `src/components/SelectInput.jsx`          |
-| DataTables              | `src/components/EmployeeTable.jsx`        |
+| Legacy plugin           | Replacement                                             | Component                                 |
+| ----------------------- | ------------------------------------------------------- | ----------------------------------------- |
+| jquery.datetimepicker   | [react-datepicker](https://reactdatepicker.com/)         | `src/components/DateInput.jsx`            |
+| jQuery UI selectmenu    | [react-select](https://react-select.com/)                | `src/components/SelectInput.jsx`          |
+| DataTables              | [react-data-table-component](https://reactdatatable.com/) | `src/components/EmployeeTable.jsx`        |
+| jquery-modal            | Custom React component (in progress)                    | `src/components/ConfirmationMessage.jsx`  |
+
+Each page is lazy-loaded, so the form libraries and the table library are only downloaded on the route that uses them.
 
 Dates are stored as ISO strings (`YYYY-MM-DD`) so they sort correctly, and are formatted as `MM/DD/YYYY` at display time.

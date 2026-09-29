@@ -1,16 +1,19 @@
+import Select from 'react-select'
+
 /**
- * Select natif. Placeholder du plugin legacy jQuery UI selectmenu :
- * remplacer l'implémentation par un select React en conservant cette API de props.
- * `options` est une liste de `{ value, label }`.
+ * Liste déroulante basée sur react-select (remplace le plugin legacy jQuery UI selectmenu).
+ * `options` est une liste de `{ value, label }` ; `value` et `onChange` utilisent la valeur seule.
  */
 export function SelectInput({ id, value, onChange, options }) {
+  const selectedOption = options.find((option) => option.value === value) ?? null
+
   return (
-    <select id={id} name={id} value={value} onChange={(event) => onChange(event.target.value)}>
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <Select
+      inputId={id}
+      name={id}
+      options={options}
+      value={selectedOption}
+      onChange={(option) => onChange(option?.value ?? '')}
+    />
   )
 }

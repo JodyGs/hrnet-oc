@@ -21,3 +21,8 @@ label {
 .address {
     margin-top: 10px;
 }
+
+/* Pleine largeur, comme le tableau DataTables legacy. */
+.employee-table {
+    width: 100%;
+}

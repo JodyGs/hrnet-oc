@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "react": "^19.2.8",
+    "react-data-table-component": "^8.11.0",
+    "react-datepicker": "^9.1.0",
     "react-dom": "^19.2.8",
-    "react-router": "^8.4.0"
+    "react-router": "^8.4.0",
+    "react-select": "^5.10.2"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
