@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { Modal } from 'modale-passy'
+import 'modale-passy/style.css'
 import { Link } from 'react-router'
-import { ConfirmationMessage } from '../components/ConfirmationMessage'
 import { EmployeeForm } from '../features/employees/EmployeeForm'
 import { useEmployees } from '../features/employees/useEmployees'
 
@@ -28,9 +29,9 @@ export function CreateEmployee() {
           Save
         </button>
       </div>
-      <ConfirmationMessage isOpen={isConfirmationOpen} onClose={() => setIsConfirmationOpen(false)}>
+      <Modal isOpen={isConfirmationOpen} onClose={() => setIsConfirmationOpen(false)} ariaLabel="Confirmation">
         Employee Created!
-      </ConfirmationMessage>
+      </Modal>
     </>
   )
 }

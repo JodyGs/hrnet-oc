@@ -1,0 +1,96 @@
+/* Apparence du plugin legacy jQuery UI selectmenu (thème « base » 1.12.1). */
+.select-input {
+    display: inline-block;
+    box-sizing: content-box;
+    width: calc(14em + 2em + 2px);
+    margin-right: 0.1em;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.select-input .select-input__control {
+    box-sizing: border-box;
+    min-height: 0;
+    padding: 0.4em 1em;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+    background: #f6f6f6;
+    color: #454545;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.select-input .select-input__control:hover,
+.select-input .select-input__control--is-focused {
+    border-color: #cccccc;
+    background: #ededed;
+    color: #2b2b2b;
+}
+
+.select-input .select-input__control--menu-is-open {
+    border-radius: 3px 3px 0 0;
+}
+
+/* Anneau de focus du navigateur, uniquement à la navigation au clavier. */
+.select-input:has(input:focus-visible) .select-input__control {
+    outline: auto 1px -webkit-focus-ring-color;
+}
+
+.select-input .select-input__value-container {
+    margin-right: 4px;
+}
+
+.select-input .select-input__single-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select-input .select-input__indicator,
+.select-input .select-input__indicators {
+    width: 16px;
+    height: 16px;
+    align-self: center;
+}
+
+/* Même triangle (7 x 4 px) que l'icône jQuery UI d'origine. */
+.select-input .select-input__triangle {
+    width: 7px;
+    height: 4px;
+    margin: -2px 0 0 4px;
+    background: #777777;
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 50% 100%, 0 15%);
+}
+
+.select-input .select-input__control:hover .select-input__triangle,
+.select-input .select-input__control--is-focused .select-input__triangle {
+    background: #555555;
+}
+
+.select-input .select-input__menu {
+    box-sizing: border-box;
+    border: 1px solid #c5c5c5;
+    border-radius: 0 0 3px 3px;
+    background: #ffffff;
+    color: #333333;
+}
+
+.select-input .select-input__menu-list {
+    /* Comme le plugin d'origine : la liste s'affiche en entier, sans barre de défilement interne. */
+    max-height: none !important;
+    padding-bottom: 1px;
+}
+
+.select-input .select-input__option {
+    padding: 3px 1em 3px 0.4em;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.select-input .select-input__option--is-focused {
+    margin: -1px;
+    border: 1px solid #003eff;
+    background: #007fff;
+    color: #ffffff;
+}

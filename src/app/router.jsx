@@ -8,6 +8,8 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
+    // Rien à afficher pendant le téléchargement de la page demandée (quelques millisecondes).
+    hydrateFallbackElement: <></>,
     children: [
       {
         index: true,

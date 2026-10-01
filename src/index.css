@@ -22,7 +22,26 @@ label {
     margin-top: 10px;
 }
 
-/* Pleine largeur, comme le tableau DataTables legacy. */
-.employee-table {
-    width: 100%;
+/* La page legacy n'a pas de doctype : en mode « quirks », le navigateur ajoute cette marge sous les formulaires. */
+#create-employee {
+    margin-bottom: 1em;
+}
+
+/* Modale de confirmation : apparence du plugin legacy jquery-modal (bouton rond sur le coin, sans animation). */
+dialog.modale-passy {
+    --modale-passy-color: #000;
+    --modale-passy-duration: 0ms;
+    overflow: visible;
+}
+
+dialog.modale-passy .modale-passy__close,
+dialog.modale-passy .modale-passy__close:hover {
+    top: -12.5px;
+    right: -12.5px;
+    border-radius: 0;
+    background: url('./assets/modal-close.png') center / contain no-repeat;
+}
+
+dialog.modale-passy .modale-passy__close span {
+    display: none;
 }

@@ -1,0 +1,195 @@
+/* Apparence du plugin legacy jquery.datetimepicker (xdsoft). */
+.date-input__popper {
+    /* Le calendrier s'ouvre collé sous le champ, aligné à gauche (la librairie le décale de 10px par défaut). */
+    margin-top: -11.3px;
+    padding: 0 !important;
+    z-index: 9999;
+}
+
+.date-input__popper .react-datepicker {
+    display: block;
+    box-sizing: border-box;
+    padding: 2px 8px 8px 0;
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
+    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    user-select: none;
+}
+
+.date-input__popper .react-datepicker__month-container {
+    float: none;
+    width: 224px;
+    margin-left: 8px;
+}
+
+.date-input__popper .react-datepicker__header {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+/* En-tête : flèches, bouton « aujourd'hui », mois et année. */
+.date-input__header {
+    display: flex;
+    align-items: flex-start;
+    height: 31.4px;
+}
+
+.date-input__nav {
+    flex: none;
+    width: 20px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: url('../assets/datepicker-sprite.png') no-repeat;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.date-input__nav:hover {
+    opacity: 1;
+}
+
+.date-input__nav--prev {
+    background-position: -20px 0;
+}
+
+.date-input__nav--today {
+    margin-left: 5px;
+    background-position: -70px 0;
+}
+
+.date-input__nav--next {
+    margin-left: auto;
+    background-position: 0 0;
+}
+
+.date-input__label {
+    display: flex;
+    flex: none;
+    align-items: center;
+    box-sizing: border-box;
+    height: 31.4px;
+    padding: 5px 3px;
+}
+
+.date-input__label--month {
+    justify-content: flex-end;
+    width: 100px;
+}
+
+.date-input__label--year {
+    justify-content: center;
+    width: 48px;
+    margin-left: 5px;
+}
+
+/* Petite flèche à droite du mois et de l'année. */
+.date-input__label::after {
+    content: '';
+    flex: none;
+    width: 9px;
+    height: 20px;
+    background: url('../assets/datepicker-sprite.png') -92px -19px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.date-input__label select {
+    field-sizing: content;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #333;
+    font: bold 14px / 20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    appearance: none;
+}
+
+.date-input__label select:hover {
+    text-decoration: underline;
+}
+
+/* Grille des jours : cases bordées, comme un tableau aux bordures fusionnées. */
+.date-input__popper .react-datepicker__day-names,
+.date-input__popper .react-datepicker__week {
+    display: flex;
+    margin: 0;
+    border-left: 1px solid #ddd;
+    white-space: normal;
+}
+
+.date-input__popper .react-datepicker__day-names {
+    border-top: 1px solid #ddd;
+}
+
+.date-input__popper .react-datepicker__month {
+    margin: 0;
+}
+
+.date-input__popper .react-datepicker__day-name,
+.date-input__popper .react-datepicker__day {
+    flex: 1;
+    box-sizing: border-box;
+    width: auto;
+    height: 25px;
+    margin: 0;
+    border: 0;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.date-input__popper .react-datepicker__day-name {
+    background: #f1f1f1;
+    color: #999;
+    font-weight: 700;
+    text-align: center;
+}
+
+.date-input__popper .react-datepicker__day {
+    padding-right: 5px;
+    background: #f5f5f5;
+    color: #666;
+    text-align: right;
+    cursor: pointer;
+}
+
+.date-input__popper .react-datepicker__day--outside-month {
+    opacity: 0.5;
+}
+
+.date-input__popper .react-datepicker__day--today {
+    color: #33aaff;
+    font-weight: 400;
+}
+
+.date-input__popper .react-datepicker__day--selected,
+.date-input__popper .react-datepicker__day--keyboard-selected {
+    background: #33aaff;
+    box-shadow: #178fe5 0 1px 3px 0 inset;
+    color: #fff;
+    font-weight: 700;
+}
+
+.date-input__popper .react-datepicker__day:hover {
+    background: #ff8000;
+    box-shadow: none;
+    color: #fff;
+}
+
+.date-input__popper .react-datepicker__day--disabled,
+.date-input__popper .react-datepicker__day--disabled:hover {
+    background: #f5f5f5;
+    color: #666;
+    opacity: 0.5;
+    cursor: default;
+}

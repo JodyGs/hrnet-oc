@@ -1,0 +1,215 @@
+/* Disposition et apparence du plugin legacy DataTables (1.10, style « display »). */
+.employee-table {
+    max-width: 100%;
+    color: #333;
+    --employee-table-sorted-cell: #fafafa;
+}
+
+/* Au-dessus du tableau : « Show N entries » à gauche, recherche à droite. */
+.employee-table__controls {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.employee-table__controls input {
+    margin-left: 0.5em;
+}
+
+/*
+ * La librairie construit le tableau avec des <div> en flexbox, à colonnes de largeur fixe.
+ * On leur redonne un comportement de vrai tableau HTML pour que, comme avec DataTables,
+ * la largeur de chaque colonne s'adapte à son contenu.
+ */
+.employee-table .rdt_Table {
+    display: table;
+    width: 100%;
+    min-width: 0;
+    border-spacing: 0;
+    border-bottom: 1px solid #111;
+    background: none;
+    color: #000;
+    font-size: 1em;
+}
+
+.employee-table .rdt_TableHead {
+    display: table-header-group;
+    color: inherit;
+    font-size: inherit;
+}
+
+.employee-table .rdt_Table > div:has(> .rdt_TableBody) {
+    display: contents;
+}
+
+.employee-table .rdt_TableBody {
+    display: table-row-group;
+}
+
+.employee-table .rdt_TableHeadRow,
+.employee-table .rdt_TableRow {
+    display: table-row;
+    min-height: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+.employee-table .rdt_TableCol,
+.employee-table .rdt_TableCell {
+    display: table-cell;
+    min-width: 0 !important;
+    max-width: none !important;
+    color: inherit;
+    font-size: inherit;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* Emplacement de la pagination de la librairie (remplacée par celle du pied de tableau). */
+.employee-table .rdt_responsiveWrapper ~ div {
+    display: none;
+}
+
+/* En-têtes : libellé centré, en gras, avec l'icône de tri de DataTables à droite. */
+.employee-table .rdt_TableCol {
+    padding: 10px 18px;
+    border: 0;
+    border-bottom: 1px solid #111;
+    background: url('../assets/sort_both.png') no-repeat center right;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.employee-table .rdt_TableCol[aria-sort='ascending'] {
+    background-image: url('../assets/sort_asc.png');
+}
+
+.employee-table .rdt_TableCol[aria-sort='descending'] {
+    background-image: url('../assets/sort_desc.png');
+}
+
+.employee-table .rdt_TableCol_Sortable {
+    display: block;
+    overflow: visible;
+    color: inherit;
+    font: inherit;
+    opacity: 1;
+}
+
+/* L'icône de tri de la librairie est remplacée par celle de DataTables. */
+.employee-table .rdt_TableCol_Sortable > span,
+.employee-table .rdt_TableCol::before,
+.employee-table .rdt_TableCol::after {
+    display: none !important;
+}
+
+.employee-table .rdt_columnText {
+    overflow: visible;
+}
+
+/* Lignes : une sur deux grisée, survol, séparateur entre les lignes. */
+.employee-table .rdt_TableCell {
+    padding: 8px 10px;
+    border: 0 !important;
+    border-top: 1px solid #ddd !important;
+}
+
+.employee-table .rdt_TableRow:first-child .rdt_TableCell {
+    border-top: 0 !important;
+}
+
+.employee-table .rdt_TableRow:nth-child(odd) {
+    background-color: #f9f9f9;
+    --employee-table-sorted-cell: #f1f1f1;
+}
+
+.employee-table .rdt_TableRow:nth-child(even) {
+    background-color: #fff;
+    --employee-table-sorted-cell: #fafafa;
+}
+
+.employee-table .rdt_TableRow:hover {
+    background-color: #f6f6f6;
+    --employee-table-sorted-cell: #eaeaea;
+}
+
+/* Message « aucune donnée » : occupe toute la largeur, comme une ligne du tableau. */
+.employee-table .rdt_Table:has(.rdt_noData) {
+    border-bottom: 0;
+}
+
+.employee-table .rdt_noData {
+    display: table-caption;
+    caption-side: bottom;
+    padding: 8px 10px;
+    border-bottom: 1px solid #111;
+    background: #f9f9f9;
+    color: #000;
+    text-align: center;
+}
+
+/* Sous le tableau : « Showing … entries » à gauche, pagination à droite. */
+.employee-table__footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.employee-table__info {
+    padding-top: 0.755em;
+}
+
+.employee-table__paginate {
+    padding-top: 0.25em;
+    text-align: right;
+}
+
+.employee-table__page {
+    box-sizing: border-box;
+    min-width: 1.5em;
+    margin: 0 0 0 2px;
+    padding: 0.5em 1em;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: none;
+    color: #333;
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.employee-table__page:hover {
+    border-color: #111;
+    background: linear-gradient(to bottom, #585858 0%, #111 100%);
+    color: #fff;
+}
+
+.employee-table__page:active {
+    background: linear-gradient(to bottom, #2b2b2b 0%, #0c0c0c 100%);
+    box-shadow: inset 0 0 3px #111;
+}
+
+.employee-table__page[aria-current='page'],
+.employee-table__page[aria-current='page']:hover {
+    border-color: #979797;
+    background: linear-gradient(to bottom, #fff 0%, #dcdcdc 100%);
+    box-shadow: none;
+    color: #333;
+}
+
+.employee-table__page:disabled,
+.employee-table__page:disabled:hover {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #666;
+    cursor: default;
+}
+
+.employee-table__ellipsis {
+    padding: 0 1em;
+}

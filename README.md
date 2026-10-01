@@ -41,7 +41,7 @@ The four legacy jQuery plugins have been removed and replaced by React component
 | jquery.datetimepicker   | [react-datepicker](https://reactdatepicker.com/)         | `src/components/DateInput.jsx`            |
 | jQuery UI selectmenu    | [react-select](https://react-select.com/)                | `src/components/SelectInput.jsx`          |
 | DataTables              | [react-data-table-component](https://reactdatatable.com/) | `src/components/EmployeeTable.jsx`        |
-| jquery-modal            | Custom React component (in progress)                    | `src/components/ConfirmationMessage.jsx`  |
+| jquery-modal            | [modale-passy](https://www.npmjs.com/package/modale-passy) (custom, published on npm) | `src/pages/CreateEmployee.jsx`            |
 
 Each page is lazy-loaded, so the form libraries and the table library are only downloaded on the route that uses them.
 
