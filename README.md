@@ -6,7 +6,7 @@ Wealth Health's internal application to create and view employee records, migrat
 
 - [Vite](https://vite.dev/) 8 + React 19
 - [React Router](https://reactrouter.com/) 8 (`createBrowserRouter`, `RouterProvider` from `react-router/dom`)
-- State: React Context + `useReducer`, persisted in `localStorage` (same `employees` key as the legacy app)
+- State: React Context + `useState`, persisted in `localStorage` (same `employees` key as the legacy app)
 - Lint: [oxlint](https://oxc.rs/docs/guide/usage/linter)
 
 ## Scripts
@@ -26,7 +26,7 @@ src/
   app/router.jsx                  routes: / (create), /employees (list), * (404)
   layouts/RootLayout.jsx
   pages/                          CreateEmployee, EmployeeList, NotFound
-  features/employees/             store (context, reducer, provider, hook), form, table columns
+  features/employees/             state (context, provider, hook, localStorage), form, table columns
   components/                     UI components, including the plugin placeholders below
   data/                           states, departments
   utils/date.js                   ISO date -> MM/DD/YYYY

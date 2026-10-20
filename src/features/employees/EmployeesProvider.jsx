@@ -1,24 +1,16 @@
-import { useCallback, useEffect, useMemo, useReducer } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { EmployeesContext } from './employeesContext'
-import {
-  ADD_EMPLOYEE,
-  employeesReducer,
-  loadEmployees,
-  saveEmployees,
-} from './employeesReducer'
+import { loadEmployees, saveEmployees } from './employeesStorage'
 
 export function EmployeesProvider({ children }) {
-  const [employees, dispatch] = useReducer(employeesReducer, undefined, loadEmployees)
+  const [employees, setEmployees] = useState(loadEmployees)
 
   useEffect(() => {
     saveEmployees(employees)
   }, [employees])
 
   const addEmployee = useCallback((employee) => {
-    dispatch({
-      type: ADD_EMPLOYEE,
-      payload: { id: crypto.randomUUID(), ...employee },
-    })
+    setEmployees((previous) => [...previous, { id: crypto.randomUUID(), ...employee }])
   }, [])
 
   const value = useMemo(() => ({ employees, addEmployee }), [employees, addEmployee])
