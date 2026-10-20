@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "modale-passy": "^1.0.1",
+    "modale-passy": "^1.1.0",
     "react": "^19.2.8",
     "react-data-table-component": "^8.11.0",
     "react-datepicker": "^9.1.0",

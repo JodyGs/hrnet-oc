@@ -29,7 +29,12 @@ export function CreateEmployee() {
           Save
         </button>
       </div>
-      <Modal isOpen={isConfirmationOpen} onClose={() => setIsConfirmationOpen(false)} ariaLabel="Confirmation">
+      <Modal
+        isOpen={isConfirmationOpen}
+        onClose={() => setIsConfirmationOpen(false)}
+        ariaLabel="Confirmation"
+        closeButtonPosition="right"
+      >
         Employee Created!
       </Modal>
     </>
